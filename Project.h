@@ -8,20 +8,16 @@
 using namespace std;
 
 class Project : public Operator {
-
-  // LOOK AT IN CLASS NOTES
   public:
     vector<string> kept_values; // attributes we want to keep
     Operator* input;
     FileReader fr;
 
     // Project constructors
-    Project(string fileName, vector<string> fieldNames) {
-      // Implement this
+    Project(string fileName, vector<string> fieldNames){
       kept_values = fieldNames;
       fr.setFileName(fileName);
       input = &fr;
-      // You would leverage the use of the FileReader class here
     }
 
     Project(Operator *op, vector<string> fieldNames) {
