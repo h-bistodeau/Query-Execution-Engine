@@ -17,6 +17,7 @@ class Record {
       Attributes.push_back(temp);
     }
 
+    // gets the location in the vector of the attribute with the given name
     Attribute get_Attribute(string name) {
       int i;
       for (i = 0; i < Attributes.size(); i++) {
