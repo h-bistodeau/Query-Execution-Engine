@@ -1,6 +1,6 @@
 # Query-Execution-Engine
 
-This repository holds all files required to run a simple query execution engine capable of running Select, Project, and Natural Join operations. 
+This repository holds all files required to run a simple query execution engine capable of running Select, Project, and Join operations. It is programmed entirely in C++.
 
 Files include are:
 - Attribute.h
@@ -29,7 +29,9 @@ Files include are:
         - SQL: Select * From "smallData/faculty.data" Where dept_name = "Comp. Sci"
 
 - Join.h
-  - (coming soon)
+  - Able to perform Join functionality from 2 files, a file and previous operator, and two operators. This class has 3 different constructors based on the different data inputs stated previously. This class runs a simple equi-join where it checks for equality within the chosen attributes.
+        - Join op1("smallData/instructor.data", "smallData/department.data", "I_dept_name","D_dept_name");
+        - SQL: SELECT * FROM instructor JOIN department ON instructor.dept_name=department.dept_name
  
 
 
