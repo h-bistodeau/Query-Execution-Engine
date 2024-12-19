@@ -24,7 +24,7 @@ class Join : public Operator {
     bool first_pass = true;
 
     Join(Operator *op1, Operator *op2, string pAttr1, string pAttr2) {
-      // Implement this (no need for the fileReader since both are operators)
+      //no need for the fileReader since both are operators
       l_input = op1;
       r_input = op2;
 
@@ -32,7 +32,6 @@ class Join : public Operator {
       r_attr = pAttr2;
     }
     Join(Operator *op, string fileName, string pAttr1, string pAttr2) {
-      // Implement this
       l_input = op; // set the operator
 
       r_fr.setFileName(fileName); // set the fileReader and the second right input
@@ -43,7 +42,6 @@ class Join : public Operator {
       r_attr = pAttr2;
     }
     Join(string fileName1, string fileName2, string pAttr1, string pAttr2) {
-      // Implement this
       //set the two fileReaders to open
       l_fr.setFileName(fileName1);
       r_fr.setFileName(fileName2);
@@ -52,7 +50,7 @@ class Join : public Operator {
       l_input = &l_fr;
       r_input = &r_fr;
 
-      //set the two variant types (you might not need this but it wouldn't hurt just in case)
+      //set the two variant types 
       l_attr = pAttr1;
       r_attr = pAttr2;
     }
@@ -82,11 +80,8 @@ class Join : public Operator {
     }
 
     void open() {
-      // Implement this
       l_input -> open();
       r_input -> open();
-
-
     }
 
 vector<Record> next() {
@@ -104,9 +99,6 @@ vector<Record> next() {
 
     // while the outPage isn't full
     while (outPage.size() < pageSize) {
-
-        //cout << "dumby dumb" << endl;
-
         // Call to AdvanceToNextRecords
         if (AdvanceToNextRecord() == true) {
             // Return if there is no more data (AdvanceToNextRecord returns true)
